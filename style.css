@@ -416,10 +416,11 @@ body {
     height: 100%;
 }
 
-/* Ajuste específico para o card do Spotify preencher o espaço vertical */
+/* Ajuste simétrico para renderizar o novo iframe oficial do Spotify */
 .spotify-card iframe {
-    min-height: 280px; /* Altura mínima elegante para o player compacto do Spotify */
-    height: 100%;
+    height: 352px; /* Alinhado à altura exata definida no atributo HTML do iframe */
+    width: 100%;
+    border-radius: 12px;
 }
 
 /* ==========================================
@@ -436,6 +437,6 @@ body {
     }
     
     .spotify-card iframe {
-        height: 380px; /* Dá mais espaço para ver a lista de faixas no mobile */
+        height: 352px; /* Mantém a proporção consistente do player estático */
     }
 }
