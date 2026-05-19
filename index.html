@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Pata de Urso</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <section class="hero-video-section">
+        <video autoplay loop muted playsinline class="bg-video">
+            <source src="video/video_head.mp4" type="video/mp4">
+        </video>
+
+        <div class="video-overlay"></div>
+
+        <div class="hero-content">
+            <img src="img/logo_png.png" alt="Logo Grupo Pata de Urso" class="hero-logo">
+            <p class="hero-subtitle">A energia do seu evento</p>
+            
+            <a href="#sobre" class="btn-action">Saiba mais</a>
+            
+            <svg class="scroll-arrow" xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </div>
+    </section>
+
+    <section class="essencia-section" id="sobre">
+        <div class="container essencia-container">
+            
+            <div class="essencia-header">
+                <h2 class="titulo-marrom">A NOSSA ESSÊNCIA</h2>
+                <div class="linha-destaque"></div>
+                <p>Com mais de uma década de estrada, o <strong>Grupo Pata de Urso</strong> consolidou-se como sinônimo de excelência e alta energia musical. Não entregamos apenas um show; entregamos uma experiência sonora imersiva. Unimos a tradição do samba e do pagode com arranjos modernos e uma performance de palco impecável, garantindo que o seu evento seja lembrado com absoluta sofisticação e alegria.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 class="stat-number">+10</h3>
+                    <h4 class="stat-title">Anos de Estrada</h4>
+                </div>
+
+                <div class="stat-card">
+                    <h3 class="stat-number">+500</h3>
+                    <h4 class="stat-title">Shows Realizados</h4>
+                </div>
+
+                <div class="stat-card">
+                    <h3 class="stat-number">+5k</h3>
+                    <h4 class="stat-title">Ouvintes Mensais</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="agenda-section" id="agenda">
+        <div class="container">
+            <div class="essencia-header">
+                <h2 class="titulo-marrom">AGENDA DE SHOWS</h2>
+                <div class="linha-destaque"></div>
+                <p>Confira as próximas datas e venha curtir o melhor do pagode com o Grupo Pata de Urso.</p>
+            </div>
+            <div id="agenda-lista" class="agenda-lista-container">
+                <div class="agenda-loading">Carregando os próximos shows...</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="midia-section" id="midia">
+        <div class="container">
+            <div class="essencia-header">
+                <h2 class="titulo-marrom">OUÇA & ASSISTA</h2>
+                <div class="linha-destaque"></div>
+                <p>Sinta a vibe do nosso show e atualize sua playlist com o melhor do nosso pagode.</p>
+            </div>
+
+            <div class="midia-grid">
+                <div class="midia-card youtube-card">
+                    <div class="video-responsive-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/Q5JSlhoPiaE" 
+                            title="Pata de Urso - Ao nosso modo" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="midia-card spotify-card">
+                    <iframe 
+                        id="spotify-album-player"
+                        style="border-radius:12px" 
+                        src="" 
+                        width="100%" 
+                        height="100%" 
+                        frameborder="0" 
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

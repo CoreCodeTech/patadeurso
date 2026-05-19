@@ -1,0 +1,441 @@
+/* ==========================================
+   1. VARIÁVEIS DE DESIGN E CONFIGURAÇÕES BASE
+   ========================================== */
+:root {
+    --marrom-urso: #D4A373;       /* Marrom claro amadeirado elegante */
+    --amarelo-energia: #FFC300;   /* Amarelo quente de alta vibração */
+    --vermelho-festa: #D62828;    /* Vermelho intenso de festa */
+    --bg-dark: #000000;           /* Preto absoluto */
+    --font-main: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: #ffffff;
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Suaviza a rolagem de links âncora */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================
+   2. SEÇÃO HERO (VÍDEO DE FUNDO EM LOOP)
+   ========================================== */
+.hero-video-section {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65); /* Filtro escuro para leitura da logo */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-logo {
+    max-width: 350px;
+    width: 100%;
+    margin-bottom: 10px;
+    filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.6));
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    color: #e0e0e0;
+}
+
+.btn-action {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    padding: 12px 40px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    margin-bottom: 40px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-action:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.scroll-arrow {
+    color: #ffffff;
+    opacity: 0.8;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(12px); }
+    60% { transform: translateY(6px); }
+}
+
+/* ==========================================
+   3. SEÇÃO: A NOSSA ESSÊNCIA (HOLOFOTES DE PALCO)
+   ========================================== */
+.essencia-section {
+    background-color: #050505;
+    background-image: 
+        radial-gradient(ellipse at 15% 120%, rgba(255, 255, 255, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 120%, rgba(255, 255, 255, 0.15) 0%, transparent 70%),
+        radial-gradient(ellipse at 85% 120%, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
+    padding: 100px 20px;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); 
+}
+
+.essencia-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.essencia-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.titulo-marrom {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--marrom-urso);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.linha-destaque {
+    width: 60px;
+    height: 3px;
+    background-color: var(--amarelo-energia);
+    margin: 0 auto 30px auto;
+    border-radius: 2px;
+}
+
+.essencia-header p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #c4c4c4;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.essencia-header strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* ==========================================
+   4. GRID E CARDS DE MÉTRICAS (ESTILO GLASS)
+   ========================================== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.stat-card {
+    background: linear-gradient(145deg, rgba(20, 20, 20, 0.7), rgba(5, 5, 5, 0.9));
+    border: 1px solid rgba(212, 163, 115, 0.15);
+    border-radius: 12px;
+    padding: 50px 30px;
+    text-align: center;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.stat-number {
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    line-height: 1;
+    background-image: linear-gradient(45deg, var(--marrom-urso) 30%, #fff5cc 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-title {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(212, 163, 115, 0.5); 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 163, 115, 0.05);
+}
+
+/* ==========================================
+   5. SEÇÃO AGENDA NATIVA E PREMIUM
+   ========================================== */
+.agenda-section {
+    padding: 100px 20px;
+    background-color: #000000;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.agenda-lista-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.agenda-loading {
+    text-align: center;
+    color: var(--marrom-urso);
+    font-size: 1.1rem;
+    padding: 40px;
+}
+
+/* Linha de Evento Estilo Tour */
+.evento-row {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(15, 15, 15, 0.8), rgba(5, 5, 5, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    padding: 20px 30px;
+    transition: all 0.3s ease;
+}
+
+.evento-row:hover {
+    border-color: rgba(214, 163, 115, 0.3);
+    background: linear-gradient(90deg, rgba(25, 21, 18, 0.8), rgba(10, 10, 10, 0.9));
+    transform: scale(1.01);
+}
+
+.evento-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.evento-dia {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--amarelo-energia);
+    line-height: 1;
+}
+
+.evento-mes {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #a0a0a0;
+}
+
+.evento-info {
+    padding: 0 20px;
+}
+
+.evento-titulo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.evento-local-hora {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn-evento {
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid var(--marrom-urso);
+    color: var(--marrom-urso);
+    padding: 10px 25px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-evento:hover {
+    background-color: var(--marrom-urso);
+    color: #000000;
+    box-shadow: 0 0 15px rgba(212, 163, 115, 0.3);
+}
+
+.agenda-vazia {
+    text-align: center;
+    color: #a0a0a0;
+    font-size: 1.1rem;
+    padding: 40px;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+/* ==========================================
+   6. RESPONSIVIDADE COMPLETA
+   ========================================== */
+@media (max-width: 768px) {
+    .hero-logo { max-width: 250px; }
+    .hero-subtitle { font-size: 0.9rem; margin-bottom: 40px; }
+    .btn-action { padding: 10px 30px; font-size: 0.8rem; }
+
+    .essencia-section, .agenda-section { padding: 60px 20px; }
+    .titulo-marrom { font-size: 2rem; }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .stat-card { padding: 40px 20px; }
+    .stat-number { font-size: 3.5rem; }
+
+    /* Adaptação da Agenda para Celulares */
+    .evento-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 15px;
+        padding: 25px;
+    }
+    .evento-data { align-items: center; }
+    .evento-info { padding: 0; }
+    .evento-local-hora { flex-direction: column; gap: 5px; }
+    .btn-evento { width: 100%; }
+}
+
+/* ==========================================
+   7. SEÇÃO MÍDIA PREMIUM (GRID DE PLAYERS)
+   ========================================== */
+.midia-section {
+    padding: 100px 20px;
+    background-color: #050505;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.midia-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: stretch; /* Garante que os dois boxes tenham exatamente a mesma altura */
+}
+
+.midia-card {
+    background: linear-gradient(145deg, rgba(20, 20, 20, 0.9), rgba(5, 5, 5, 0.95));
+    border: 1px solid rgba(212, 163, 115, 0.1);
+    border-radius: 16px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.midia-card:hover {
+    border-color: rgba(212, 163, 115, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 15px rgba(212, 163, 115, 0.05);
+    transform: translateY(-4px);
+}
+
+/* Container responsivo para travar a proporção do vídeo do YouTube (16:9) */
+.video-responsive-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Proporção 16:9 perfeita */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.video-responsive-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ajuste específico para o card do Spotify preencher o espaço vertical */
+.spotify-card iframe {
+    min-height: 280px; /* Altura mínima elegante para o player compacto do Spotify */
+    height: 100%;
+}
+
+/* ==========================================
+   RESPONSIVIDADE MÍDIA PREMIUM (MOBILE)
+   ========================================== */
+@media (max-width: 768px) {
+    .midia-section {
+        padding: 60px 20px;
+    }
+    
+    .midia-grid {
+        grid-template-columns: 1fr; /* Vira uma coluna única no celular */
+        gap: 20px;
+    }
+    
+    .spotify-card iframe {
+        height: 380px; /* Dá mais espaço para ver a lista de faixas no mobile */
+    }
+}
