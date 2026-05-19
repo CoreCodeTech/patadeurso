@@ -449,3 +449,208 @@ footer {
     font-size: 0.88em;
     border-top: 1px solid var(--glass-border);
 }
+/* ==========================================
+   8. SEÇÃO INTEGRANTES (NOVA)
+   ========================================== */
+.integrantes-section {
+    padding: 100px 20px;
+    background-color: #000000;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.integrantes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.integrante-card {
+    background: linear-gradient(145deg, rgba(15, 15, 15, 0.6), rgba(5, 5, 5, 0.8));
+    border: 1px solid rgba(212, 163, 115, 0.08);
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.integrante-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 163, 115, 0.3);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Container circular para a foto */
+.avatar-wrapper {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    background-color: #ffffff; /* Fundo branco interno para casar com o blend da foto */
+    overflow: hidden;
+    border: 2px solid rgba(212, 163, 115, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+.integrante-card:hover .avatar-wrapper {
+    border-color: var(--amarelo-energia);
+    transform: scale(1.03);
+}
+
+.integrante-foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Remove o fundo branco da foto do artista nativamente se misturando ao circulo */
+    mix-blend-mode: multiply; 
+}
+
+.integrante-nome {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.integrante-funcao {
+    font-size: 0.85rem;
+    color: var(--marrom-urso);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+/* RESPONSIVIDADE INTEGRANTES */
+@media (max-width: 992px) {
+    .integrantes-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 por linha em tablets */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .integrantes-section {
+        padding: 60px 20px;
+    }
+    .integrantes-grid {
+        grid-template-columns: 1fr; /* 1 por linha no celular */
+        gap: 25px;
+    }
+    .avatar-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+
+/* ==========================================
+   9. SEÇÃO CONTATO E BOTÃO ANIMADO
+   ========================================== */
+.contato-section {
+    padding: 100px 20px;
+    background-color: #050505;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.contato-container {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.contato-card {
+    background: linear-gradient(145deg, rgba(20, 20, 20, 0.8), rgba(5, 5, 5, 0.95));
+    border: 1px solid rgba(212, 163, 115, 0.12);
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.contato-chamada {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.contato-texto {
+    font-size: 1rem;
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+/* O Botão Mágico com Animação de Pulso */
+.btn-whatsapp-animado {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #25D366; /* Verde oficial do WhatsApp */
+    color: #ffffff;
+    padding: 16px 45px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    
+    /* Ativa a animação de movimento contínuo */
+    animation: pulseWhats 2.5s infinite ease-in-out;
+}
+
+.whats-icon {
+    font-size: 1.2rem;
+}
+
+/* Comportamento ao passar o mouse por cima (para a animação e foca no clique) */
+.btn-whatsapp-animado:hover {
+    background-color: #1ebd59;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(37, 211, 102, 0.6);
+    animation-play-state: paused; /* Dá um feedback firme no hover */
+}
+
+/* Definição do Movimento Contínuo Profissional */
+@keyframes pulseWhats {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    }
+    50% {
+        transform: scale(1.04);
+        /* Cria aquele efeito de onda saindo de trás do botão */
+        box-shadow: 0 8px 35px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    }
+}
+
+/* Ajuste de Responsividade para Celular */
+@media (max-width: 576px) {
+    .contato-section {
+        padding: 60px 20px;
+    }
+    .contato-card {
+        padding: 30px 20px;
+    }
+    .contato-chamada {
+        font-size: 1.35rem;
+    }
+    .btn-whatsapp-animado {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 0.85rem;
+    }
+}
