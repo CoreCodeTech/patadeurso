@@ -440,3 +440,12 @@ body {
         height: 352px; /* Mantém a proporção consistente do player estático */
     }
 }
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: var(--secondary-color);
+    color: var(--text-muted);
+    font-size: 0.88em;
+    border-top: 1px solid var(--glass-border);
+}
