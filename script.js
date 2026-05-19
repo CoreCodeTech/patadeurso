@@ -2,7 +2,7 @@
 const GOOGLE_API_URL = 'https://script.google.com/macros/s/AKfycbyFAh93GimIfoILhAQ13extXKigqZoh3FGPsVChDNLeXuu9j6jbysrd9ld42RWtlSsrOQ/exec';
 
 // ID Temporário do Álbum de Pagode no Spotify (Altere aqui quando os guris mandarem o deles!)
-const SPOTIFY_ALBUM_ID = "5765Ue2X3R7Hk8SAtI90W2";
+const SPOTIFY_ALBUM_ID = "4vn76aBaaU08z3uCHraE44?si=zZnBjc6AQ96vDF4EbWvESA";
 
 async function carregarEventos() {
     const container = document.getElementById('agenda-lista');
