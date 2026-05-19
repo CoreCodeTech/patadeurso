@@ -1,9 +1,6 @@
 // URL oficial do Google Apps Script fornecida por você
 const GOOGLE_API_URL = 'https://script.google.com/macros/s/AKfycbyFAh93GimIfoILhAQ13extXKigqZoh3FGPsVChDNLeXuu9j6jbysrd9ld42RWtlSsrOQ/exec';
 
-// ID do Álbum ajustado (removido o código de compartilhamento ?si= para não quebrar o embed)
-const SPOTIFY_ALBUM_ID = "4vn76aBaaU08z3uCHraE44";
-
 async function carregarEventos() {
     const container = document.getElementById('agenda-lista');
     
@@ -93,17 +90,4 @@ async function carregarEventos() {
 document.addEventListener('DOMContentLoaded', function() {
     // Executa a carga da agenda do Google Sheets
     carregarEventos();
-
-    // INJETOR DINÂMICO ANTIBLOQUEIO DO SPOTIFY (Ofuscação total para a IA não ler a URL)
-    const s1 = "ht" + "tps";
-    const s2 = "op" + "en";
-    const s3 = "spo" + "tify";
-    const s4 = "c" + "om";
-    
-    const urlSeguraSpotify = s1 + "://" + s2 + "." + s3 + "." + s4 + "/embed/album/" + SPOTIFY_ALBUM_ID + "?theme=0";
-
-    const spotifyIframe = document.getElementById('spotify-album-player');
-    if (spotifyIframe) {
-        spotifyIframe.src = urlSeguraSpotify;
-    }
 });
