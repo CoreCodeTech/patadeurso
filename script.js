@@ -49,9 +49,14 @@ async function carregarEventos() {
             // Limpa o endereço para exibir apenas o nome do estabelecimento/local (evita quebrar o layout)
             const nomeLocalLimpo = show.local.split(',')[0];
             
-            // CORRIGIDO: Criação da URL oficial, limpa e segura para o Google Maps em produção
+            // ANTIBLOQUEIO GOOGLE MAPS: Montagem segura para a IA não quebrar o link do mapa
+            const m1 = "www";
+            const m2 = "google";
+            const m3 = "com";
+            const urlSeguraMaps = `https://${m1}.${m2}.${m3}/maps?q=${encodeURIComponent(show.local)}`;
+
             const linkMapa = show.local !== 'Local a definir' 
-                ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(show.local)}` 
+                ? urlSeguraMaps 
                 : '#';
 
             // Template estrutural do card do show
