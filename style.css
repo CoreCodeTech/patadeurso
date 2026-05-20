@@ -620,15 +620,40 @@ footer {
     animation-play-state: paused; /* Dá um feedback firme no hover */
 }
 
-footer p a {
-            text-decoration: none; /* Remove o sublinhado */
-            color: inherit;        /* Faz o link herdar a cor do texto do <p> (geralmente preto ou cinza) */
+footer {
+            background-color: #000000;
+            padding: 20px;
+            text-align: center;
         }
 
-        /* Opcional: Adiciona um efeito quando o usuário passa o mouse por cima */
+        /* Texto padrão do footer */
+        footer p {
+            color: #888888; /* Um cinza elegante para o texto normal */
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Customização do Link (UI Moderna) */
+        footer p a {
+            text-decoration: none; /* Remove o sublinhado azul horroroso */
+            color: #ffffff;        /* Destaca o link em branco para indicar que é clicável */
+            font-weight: 500;      /* Deixa a fonte ligeiramente mais gordinha */
+            padding-bottom: 2px;
+            border-bottom: 1px solid transparent; /* Cria uma linha invisível para a animação */
+            transition: all 0.3s ease; /* Faz as mudanças acontecerem de forma suave (animação) */
+        }
+
+        /* Efeito Hover: Quando o mouse passa por cima */
         footer p a:hover {
-            text-decoration: underline; /* O sublinhado volta só quando passa o mouse */
-            color: #007acc;             /* Muda de cor levemente ao passar o mouse */
+            color: #00bcd4; /* Muda para uma cor de destaque (ex: azul claro/ciano) */
+            border-bottom: 1px solid #00bcd4; /* O sublinhado aparece de forma elegante */
+            opacity: 0.9;
+        }
+
+        /* Efeito Active: Quando o usuário clica no link */
+        footer p a:active {
+            transform: scale(0.98); /* Dá um mini efeito de "botão afundando" ao clicar */
         }
 
 /* Definição do Movimento Contínuo Profissional */
