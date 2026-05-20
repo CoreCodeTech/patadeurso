@@ -620,6 +620,17 @@ footer {
     animation-play-state: paused; /* Dá um feedback firme no hover */
 }
 
+footer p a {
+            text-decoration: none; /* Remove o sublinhado */
+            color: inherit;        /* Faz o link herdar a cor do texto do <p> (geralmente preto ou cinza) */
+        }
+
+        /* Opcional: Adiciona um efeito quando o usuário passa o mouse por cima */
+        footer p a:hover {
+            text-decoration: underline; /* O sublinhado volta só quando passa o mouse */
+            color: #007acc;             /* Muda de cor levemente ao passar o mouse */
+        }
+
 /* Definição do Movimento Contínuo Profissional */
 @keyframes pulseWhats {
     0% {
