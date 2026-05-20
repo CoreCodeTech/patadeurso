@@ -41,7 +41,6 @@ async function carregarEventos() {
             // Formatadores nativos em português (pt-BR)
             const dia = dataShow.toLocaleDateString('pt-BR', { day: '2-digit' });
             const mes = dataShow.toLocaleDateString('pt-BR', { month: 'short' }).replace('.', '');
-            const hora = dataShow.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
             
             // Limpa o endereço para exibir apenas o nome do estabelecimento/local (evita quebrar o layout)
             const nomeLocalLimpo = show.local.split(',')[0];
@@ -56,7 +55,7 @@ async function carregarEventos() {
                 ? urlSeguraMaps 
                 : '#';
 
-            // Template estrutural do card do show
+            // Template estrutural do card do show (Horário removido com sucesso)
             const eventoHTML = `
                 <div class="evento-row">
                     <div class="evento-data">
@@ -67,7 +66,6 @@ async function carregarEventos() {
                         <h3 class="evento-titulo">${show.titulo}</h3>
                         <div class="evento-local-hora">
                             <span>📍 ${nomeLocalLimpo}</span> 
-                            <span>🕒 ${hora}</span>
                         </div>
                     </div>
                     <div class="evento-action">
